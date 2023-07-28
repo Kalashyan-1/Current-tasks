@@ -1,3 +1,0 @@
-/home/khachik/Image2Emoji/src/build/CMakeFiles/EmojiArt.dir
-/home/khachik/Image2Emoji/src/build/CMakeFiles/edit_cache.dir
-/home/khachik/Image2Emoji/src/build/CMakeFiles/rebuild_cache.dir
