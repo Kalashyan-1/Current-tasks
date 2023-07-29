@@ -51,19 +51,22 @@ void Server::Accept() {
     if (type == SocketType::TCP) {
         socklen_t addrlen = sizeof(serv_address);
         if ((new_socket = accept(server_fd, (struct sockaddr *)&serv_address, (socklen_t *)&addrlen)) < 0) {
-        throw std::runtime_error("Accept failed");
+            throw std::runtime_error("Accept failed");
         }
     }
 }
 
 void Server::Run() {
+    hendleExecutiuon();
+}
+
+void Server::hendleExecutiuon() {
     if (type == SocketType::TCP) {
         RunTCP();
     } else {
         RunUDP();
     }
 }
-
 
 void Server::RunTCP() {
     char buffer[1024] {0};

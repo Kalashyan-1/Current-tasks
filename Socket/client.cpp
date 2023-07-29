@@ -2,7 +2,7 @@
 
 Client::Client(const std::string& serverIP, unsigned int Port) : server_IP{serverIP}, port{Port} {}
 
-Client::~Client() {
+Client::~Client() noexcept {
     close(sock);
 }
 
@@ -39,6 +39,11 @@ void Client::Connect() {
     }
 }
 void Client::Run() {
+    std::cout << "BBBBB";
+    exec();
+}
+
+void Client::exec() {
     int valread;
     std::string str;
     char buffer[1024];

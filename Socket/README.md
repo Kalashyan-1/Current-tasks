@@ -1,6 +1,6 @@
-# Client-Server Program 
+# Web-Server Program 
 
-This repository contains a C++ client-server program designed as class wrappers around low-level C socket functionality. The program allows clients to connect to the server, send messages, and receive responses.
+This repository contains a C++ client-server program designed as class wrappers around low-level C socket functionality. The program allows clients to connect to the server, send HTTP request, and receive single HTML file.
 
 ## Prerequisites
 
@@ -15,10 +15,11 @@ Before running the program, ensure that you have the following prerequisites ins
 To compile the program, follow these steps:
 
 1. Clone this repository to your local machine:
-    - `https://github.com/Kalashyan-1/Current-tasks/Socket.git`
+    - `https://github.com/Kalashyan-1/Current-tasks.git`
+    - `cd Current-tasks/Socket`
 2. Compile the server and client files:
-    - `g++ serverMain.cpp -o server`
-    - `g++ clientMain.cpp -o client`
+    - `g++ -o server serverMain.cpp webServer.cpp server.cpp `
+    - `g++ -o http httpMain.cpp`
 
 ## How to Run
 
@@ -27,11 +28,8 @@ Follow these steps to run the client-server program:
 1. Start the server:
     -`./server`
 2. Start the client:
-    -`./client`
+    -`./http`
 
-- Communicate between client and server:
-    - After running the client, you can send messages to the server by typing them in the terminal and pressing Enter.
-    - The server will process the messages and respond back to the client.
 
 - Terminate the program:
     - To terminate the client or server, simply press Ctrl+C.

@@ -2,23 +2,28 @@
 #define SERVER_
 
 #include "include.h"
+#include <sstream>
 
 class Server {
 public:
     Server(unsigned int);
     ~Server();
 
-    void CreatSocket(IPV version, SocketType type);
+    virtual void CreatSocket(IPV version, SocketType type = SocketType::TCP);
     void Bind();
     void Listen(unsigned int);
     void Accept();
     void Run();
 
 private:
-    void SetUP(IPV version);
+    virtual void hendleExecutiuon();
     void RunTCP();
     void RunUDP();
-private:
+
+protected:
+    void SetUP(IPV version);
+
+protected:
     SocketType type;
     IPV version;
     unsigned int port;

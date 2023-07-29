@@ -9,15 +9,16 @@
 class Client {
 public:
     Client(const std::string&, unsigned int);
-    ~Client();
+    virtual ~Client() noexcept;
 
-    void CreatSocket(IPV, SocketType);
+    virtual void CreatSocket(IPV, SocketType);
     void Connect();
     void Run();
 
-private:   
+protected:   
     void SetUP(IPV);
-private:
+    virtual void exec();
+protected:
     int sock;
     std::string server_IP;
     unsigned int port;
